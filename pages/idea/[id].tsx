@@ -7,11 +7,13 @@ import React from "react";
 import { stringify } from "querystring";
 import { Button, Grid, JsonInput, Title } from "@mantine/core";
 
-export async function getServerSideProps({ params }) {
-  await queryClient.prefetchQuery("idea", () => ideaByName({ id: params.id }));
+export async function getServerSideProps(props: any) {
+  await queryClient.prefetchQuery("idea", () =>
+    ideaByName({ id: props.params.id })
+  );
   return {
     props: {
-      id: params.id,
+      id: props.params.id,
       dehydratedState: dehydrate(queryClient),
     },
   };

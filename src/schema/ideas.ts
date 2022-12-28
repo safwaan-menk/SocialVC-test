@@ -12,11 +12,11 @@ import {
 @ObjectType()
 export class Idea {
     @Field(() => ID)
-    id: string
+    id!: string
     
     @Field(() => String)
-    idea: string;
+    idea!: string;
 
     @Field(() => String)
-    description: string;
+    description!: string;
 }
