@@ -1,0 +1,7 @@
+mutation createIdea($data: IdeaInput!) {
+  createIdea(data: $data) {
+    id
+    idea
+    description
+  }
+}

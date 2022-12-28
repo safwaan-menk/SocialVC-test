@@ -1,0 +1,6 @@
+query ideaByName($id: String!) {
+  idea(id: $id) {
+    idea
+    description
+  }
+}
