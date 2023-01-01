@@ -42,13 +42,13 @@ export class IdeasResolver {
         newIdea.description = data.description;
         ideas.push(newIdea);
         // Read the existing data from the data.json file
-        const existingData = JSON.parse(fs.readFileSync("C:/socialvc/src/schema/ideas.json").toString());
+        const existingData = JSON.parse(fs.readFileSync("../../socialvc/src/schema/ideas.json").toString());
 
         // Add the new idea to the existing data
         const updatedData = [...existingData, newIdea];
 
         // Update the data.json file with the updated data
-        fs.writeFileSync("C:/socialvc/src/schema/ideas.json", JSON.stringify(updatedData));
+        fs.writeFileSync("../../socialvc/src/schema/ideas.json", JSON.stringify(updatedData));
         return newIdea;
     }
 
